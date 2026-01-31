@@ -5,17 +5,30 @@
 
 # Website name (set in params.yaml under hugoblox.branding.name)
 title: The Liberal Library
-# Website URL
-baseURL: 'https://example.com/'
+
+# Website URL (IMPORTANT: change to your Netlify URL or your custom domain)
+baseURL: 'https://liberal-library.netlify.app/'
 
 ############################
 ## LANGUAGE
 ############################
 
-defaultContentLanguage: en
+defaultContentLanguage: ar
 hasCJKLanguage: false
-defaultContentLanguageInSubdir: false
+defaultContentLanguageInSubdir: true
 removePathAccents: true
+
+languages:
+  ar:
+    languageCode: ar
+    languageName: العربية
+    weight: 1
+    languageDirection: rtl
+  en:
+    languageCode: en
+    languageName: English
+    weight: 2
+    languageDirection: ltr
 
 ############################
 ## PAGE OPTIONS
@@ -35,31 +48,40 @@ build:
   writeStats: true
 enableGitInfo: false
 summaryLength: 30
+
 pagination:
   pagerSize: 10
+
 enableEmoji: true
 enableRobotsTXT: true
 footnotereturnlinkcontents: <sup>^</sup>
 ignoreFiles: [".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
 disableAliases: true
+
 outputs:
   home: [HTML, RSS, headers, redirects, backlinks]
   section: [HTML, RSS]
+
 imaging:
   resampleFilter: lanczos
   quality: 90
   anchor: smart
   hint: picture
+
 timeout: 600000
+
 taxonomies:
   author: authors
   tag: tags
   publication_type: publication_types
+
 markup:
   _merge: deep
   highlight:
     lineNos: false
+
 security:
   _merge: deep
+
 sitemap:
   _merge: deep
